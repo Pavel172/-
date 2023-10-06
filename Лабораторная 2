@@ -1,0 +1,260 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() 
+{
+	setlocale(LC_ALL, "Rus");
+	int x = 0, y = 0, z = 0, h = 0, b = 0, a1 = 0, b1 = 1, c = 0, d = 0, u = 0, j = 0, n = 0;
+	long long a = 0, b2 = 1;
+	cout << "Введите X, Y, Z через пробел: ";
+	cin >> x >> y >> z;
+	if (x % 2 != 0, y % 2 != 0) 
+	{
+		cout << "\nКаждое из чисел X и Y нечетное: Сondition is true" << endl << endl;
+	}
+	else
+	{
+		cout << "\nКаждое из чисел X и Y нечетное: Сondition is false" << endl << endl;;
+	}
+	if ((x < 20) xor (y < 20))
+	{
+		cout << "\nТолько одно из чисел X и Y меньше 20: Сondition is true" << endl << endl;
+	}
+	else
+	{
+		cout << "\nТолько одно из чисел X и Y меньше 20: Сondition is false" << endl << endl;;
+	}
+	if (x == 0 or y == 0)
+	{
+		cout << "\nХотя бы одно из чисел X и Y равно нулю: Сondition is true" << endl << endl;
+	}
+	else
+	{
+		cout << "\nХотя бы одно из чисел X и Y равно нулю: Сondition is false" << endl << endl;;
+	}
+	if (x < 0 && y < 0 && z < 0)
+	{
+		cout << "\nКаждое из чисел X, Y, Z отрицательное: Сondition is true" << endl << endl;
+	}
+	else
+	{
+		cout << "\nКаждое из чисел X, Y, Z отрицательное: Сondition is false" << endl << endl;;
+	}
+    if ((x % 5 == 0 && y % 5 != 0 && z % 5 != 0) || (x % 5 != 0 && y % 5 == 0 && z % 5 != 0) || (x % 5 != 0 && y % 5 != 0 && z % 5 == 0))
+	{
+		cout << "\nТолько одно из чисел X, Y и Z кратно пяти: Сondition is true" << endl << endl;
+	}
+	else
+	{
+		cout << "\nТолько одно из чисел X, Y и Z кратно пяти: Сondition is false" << endl << endl;;
+	}
+	if (x>100 or y>100 or z>100)
+	{
+		cout << "\nХотя бы одно из чисел X, Y, Z больше 100: Сondition is true" << endl << endl;
+	}
+	else
+	{
+		cout << "\nХотя бы одно из чисел X, Y, Z больше 100: Сondition is false" << endl << endl;;
+	}
+	cout << "\nЗадание 2:" << endl;
+	cout << "\nВведите координаты ладьи(A) и координаты поля(B), которому она должна угрожать: ";
+	using byte = int;
+	pair<byte, byte> positionA;
+	pair<byte, byte> positionB;
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin >> positionA.first >> positionA.second >> positionB.first >> positionB.second;
+	if (positionA.first < 1 or positionA.first > 8 or positionA.second < 1 or positionA.second > 8 or positionB.second < 1 or positionB.second > 8 or positionB.first < 1 or positionB.first > 8)
+	{
+		cout << "\nОшибка, 0 < a,b,c,d < 9" << endl;
+	}
+	else
+	{
+		if ((positionA.first == positionB.first) or (positionA.second == positionB.second))
+		{
+			cout << "\nДа, ладья с координатами A(" << positionA.first << "," << positionA.second << ") угрожает полю с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+		else
+		{
+			cout << "\nНет, ладья с координатами A(" << positionA.first << "," << positionA.second << ") не угрожает полю с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+	}
+	cout << "\nВведите координаты слона(A) и координаты поля(B), которому он должен угрожать: ";
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin >> positionA.first >> positionA.second >> positionB.first >> positionB.second;
+	if (positionA.first < 1 or positionA.first > 8 or positionA.second < 1 or positionA.second > 8 or positionB.second < 1 or positionB.second > 8 or positionB.first < 1 or positionB.first > 8)
+	{
+		cout << "\nОшибка, 0 < a,b,c,d < 9" << endl;
+	}
+	else
+	{
+		if ((abs(positionA.first - positionB.first)) == (abs(positionA.second - positionB.second)))
+		{
+			cout << "\nДа, слон с координатами A(" << positionA.first << "," << positionA.second << ") угрожает полю с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+		else
+		{
+			cout << "\nНет, слон с координатами A(" << positionA.first << "," << positionA.second << ") не угрожает полю с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+	}
+	cout << "\nВведите координаты короля(A) и координаты поля(B), на которое он должен попасть одним ходом: ";
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin >> positionA.first >> positionA.second >> positionB.first >> positionB.second;
+	if (positionA.first < 1 or positionA.first > 8 or positionA.second < 1 or positionA.second > 8 or positionB.second < 1 or positionB.second > 8 or positionB.first < 1 or positionB.first > 8)
+	{
+		cout << "\nОшибка, 0 < a,b,c,d < 9" << endl;
+	}
+	else
+	{
+		if (((abs(positionA.first - positionB.first)) == 1) or ((abs(positionA.second - positionB.second) == 1)))
+		{
+			cout << "\nДа, король с координатами A(" << positionA.first << "," << positionA.second << ") может попасть одним ходом на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+		else
+		{
+			cout << "\nНет, король с координатами A(" << positionA.first << "," << positionA.second << ") не может попасть одним ходом на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+	}
+	cout << "\nВведите координаты ферзя(A) и координаты поля(B), которому он должен угрожать: ";
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin >> positionA.first >> positionA.second >> positionB.first >> positionB.second;
+	if (positionA.first < 1 or positionA.first > 8 or positionA.second < 1 or positionA.second > 8 or positionB.second < 1 or positionB.second > 8 or positionB.first < 1 or positionB.first > 8)
+	{
+		cout << "\nОшибка, 0 < a,b,c,d < 9" << endl;
+	}
+	else
+	{
+		if ((positionA.first == positionB.first) or (positionA.second == positionB.second) or (abs(positionA.first - positionB.first)) == (abs(positionA.second - positionB.second)))
+		{
+			cout << "\nДа, ферзь с координатами A(" << positionA.first << "," << positionA.second << ") угрожает полю с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+		else
+		{
+			cout << "\nНет, ферзь с координатами A(" << positionA.first << "," << positionA.second << ") не угрожает полю с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+		}
+	}
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cout << "\nВведите координаты белой пешки(A) и координаты поля(B), на которое она может попасть одним ходом: ";
+	cin >> positionA.first >> positionA.second >> positionB.first >> positionB.second;
+	if (positionA.first < 1 or positionA.first > 8 or positionA.second < 1 or positionA.second > 8 or positionB.second < 1 or positionB.second > 8 or positionB.first < 1 or positionB.first > 8)
+	{
+		cout << "\nОшибка, 0 < a,b,c,d < 9" << endl;
+	}
+	else
+	{
+		if (positionA.second == 1)
+		{
+			cout << "\nОшибка, белая пешка не может оказаться первом на ряду по горизонтали" << endl;
+		}
+		else {
+			if (positionA.second == 2)
+			{
+				if ((positionB.second - positionA.second == 2 || positionB.second - positionA.second == 1) && positionA.first == positionB.first)
+				{
+					cout << "\nПри обычном ходе: Да, белая пешка с координатами A(" << positionA.first << "," << positionA.second << ") может одним ходом попасть на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+				}
+				else
+				{
+					cout << "\nПри обычном ходе: Нет, белая пешка с координатами A(" << positionA.first << "," << positionA.second << ") не может одним ходом попасть на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+				}
+			}
+			else
+			{
+				if ((positionA.first == positionB.first) && ((positionB.second - positionA.second) == 1))
+				{
+					cout << "\nПри обычном ходе: Да, белая пешка с координатами A(" << positionA.first << "," << positionA.second << ") может одним ходом попасть на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+				}
+				else
+				{
+					cout << "\nПри обычном ходе: Нет, белая пешка с координатами A(" << positionA.first << "," << positionA.second << ") не может одним ходом попасть на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+				}
+			}
+			if ((abs(positionA.first - positionB.first) == 1) && (positionB.second - positionA.second == 1))
+			{
+				cout << "\nПри атаке фигуры соперника : Да, белая пешка с координатами A(" << positionA.first << "," << positionA.second << ") может атаковать фигуру соперника на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+			}
+			else
+			{
+				cout << "\nПри атаке фигуры соперника : Нет, белая пешка с координатами A(" << positionA.first << "," << positionA.second << ") не может атаковать фигуру соперника на поле с координатами B(" << positionB.first << "," << positionB.second << ")" << endl;
+			}
+		}
+	}
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cout <<" \n\nЗадание 3:" << endl << endl;
+	while (j < 10)
+	{
+		u = j * 7;
+		cout << j << " * 7 = " << u << endl;
+		u = 0;
+		j++;
+	}
+	j = 0;
+	cout << "\nВведите число: ";
+	cin >> h;
+	cout << endl;
+	while (j < 10)
+	{
+		n = j * h;
+		cout << j << " * " << h << " = " << n << endl;
+		n = 0;
+		j++;
+	}
+	cout << "\nЗадание 4:" << endl;
+	cout << "\nПроизведение всех целых чисел от 8 до 15 = " << 8 * 9 * 10 * 11 * 12 * 13 * 14 * 15 << endl;
+	cout << "\n\nВведите значение a(1 < a < 20): ";
+	cin >> a;
+	a1 = a;
+	if ((a1 > 1) && (a1 < 20)) 
+	{
+		while (a1 < 20)
+		{
+			a1++;
+			a = a * a1;
+		}
+		cout << "\nПроизведение всех целых чисел от a до 20 = " << a << endl;
+	}
+	else 
+	{
+		cout << "\nОшибка. Переменная должна удовлеворять условию: 1<a<20" << endl;
+	}
+	cout << "\n\nВведите значение b(1 < b < 20): ";
+	cin >> b;
+	if ((b > 1) && (b < 20)) 
+	{
+		while (b1 < b)
+		{
+			b1++;
+			b2 = b2 * b1;
+		}
+		cout << "\nПроизведение всех целых чисел от 1 до b = " << b2 << endl;
+	}
+	else 
+	{
+		cout << "\nОшибка. Переменная должна удовлеворять условию: 1<b<20" << endl;
+	}
+	cout << "\n\nВведите значения a и b (b >= a): ";
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cin >> a >> b;
+	a1 = a;
+	if (b >= a) 
+	{
+		while (a1 < b)
+		{
+			a1++;
+			a = a * a1;
+		}
+		cout << "\nПроизведение всех целых чисел от a до b = " << a << endl;
+	}
+	else 
+	{
+		cout << "\nОшибка. Переменные должны удовлеворять условию: b>=a" << endl;
+	}
+	return 0;
+}
