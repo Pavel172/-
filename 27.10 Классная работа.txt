@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <Windows.h>
+using namespace std;
+
+struct student
+{
+	string namest;
+	unsigned int age, math, phys, inf;
+};
+
+class Group
+{
+private:
+	vector <student> stud_all;
+	string namegr;
+	unsigned int quant;
+	int age_all;
+	double get_aver_age;
+	double get_aver_mark;
+
+public:
+	Group()
+	{
+		student st;
+		setlocale(LC_ALL, "Rus");
+		SetConsoleCP(1251);
+		SetConsoleOutputCP(1251);
+		cout << "Введите название группы: ";
+		cin >> namegr;
+		cout << "Введите количество студентов в группе " << namegr << ": ";
+		cin >> quant;
+		for (int i = 0; i < quant; ++i)
+		{
+			cout << "Введите имя " << i + 1 << "-го студента, его возраст, оценки по математике, физике и информатике : ";
+			cin >> st.namest >> st.age >> st.math >> st.phys >> st.inf;
+			stud_all.push_back(st);
+			age_all += st.age;
+		}
+		get_aver_age = (double)age_all / quant;
+		cout << "\n\nСписок студентов группы " << namegr << ": " << endl;
+		for (int i = 0; i < quant; ++i)
+		{
+			cout << "Имя " << i + 1 << "-го студента: " << stud_all[i].namest << endl << "Его возраст: " << stud_all[i].age << endl << "Его средняя оценка по 3-м предметам: " << (double)(stud_all[i].math + stud_all[i].phys + stud_all[i].inf) / 3 << endl << endl;
+		}
+		cout << "Средний возраст студентов в группе " << namegr << ": " << (double)age_all / quant << endl;
+	}
+
+};
+	
+
+
+int main()
+{
+	Group a;
+	return 0;
+}
