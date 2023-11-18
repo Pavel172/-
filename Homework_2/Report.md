@@ -265,3 +265,17 @@ bool solve(stack <sort> & numbers, stack <sort> & operations, sort & elem)
 	return true;
 }
 ```
+
+<h3 align="center">Примеры работы моего калькулятора</h3>
+
+![example_internet1](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/example_internet1.png)
+
+![example_my1](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/example_my1.png)
+
+![example_internet2](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/example_internet2.png)
+
+![example_my2](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/example_my2.png)
+
+![example_internet3](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/example_internet3.png)
+
+![example_my3](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/example_my3.png)
