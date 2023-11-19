@@ -5,6 +5,10 @@
 
 ![Alt-block diagram](https://github.com/Pavel172/-/blob/main/Homework_2/Блок%20схема.png)
 
+![Alt-block diagram](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/block%20diagram2.png)
+
+![Alt-block diagram](https://github.com/Pavel172/-/blob/main/examples%20for%20calculator/block%20diagram2%2C2.png)
+
 
 
 
